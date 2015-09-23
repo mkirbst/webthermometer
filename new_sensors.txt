@@ -1,0 +1,17 @@
+## please define here your new sensor hardware
+## comments begin with #
+# id                    location        place                           typ     platform                ipv4            ipv6    label
+28-04-2B-E0-05-00-00-36 sili            Dachboden-Arduino               DS18B20 arduino-ethernet        10.42.11.123    x       Dachboden-Arduino
+28-FF-DE-D4-50-14-00-17 sili            Dachboden-Heizkreislauf         DS18B20 arduino-ethernet        10.42.11.123    x       Dachboden-Heizkreislauf
+28-FF-7B-D5-50-14-00-79 sili            Dachboden-aussen                DS18B20 arduino-ethernet        10.42.11.123    x       Dachboden-aussen
+# ESP8266 WEBSERVER ON MAC-ADDRESS 18:FE:34:F4:5F:B9
+28-FF-E1-6E-50-14-00-76 sili            Jagdzimmer-Test                 DS18B20 esp8266v1               10.42.11.24     x       Jagdzimmer-Test-01
+28-FF-F9-EC-50-14-00-EA sili            Jagdzimmer-Test                 DS18B20 esp8266v1               10.42.11.24     x       Jagdzimmer-Test-02
+
+
+
+
+
+
+
+
