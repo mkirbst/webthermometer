@@ -12,13 +12,14 @@ MYSQLHOST="localhost";
 MYSQLPORT="3306";
 MYSQLDB="basement";
 MYSQLTABLE="tempsensors";
+MYSQLDATATABLE="tempdata";
 TS=`date "+%Y%m%d%H%M%S"`
 ## /mysql ##
 
-
-#### create approriate table, if not already exists:
+#### create approriate database and tables, if not already exists:
 echo "CREATE DATABASE IF NOT EXISTS $MYSQLDB;" | mysql -u $MYSQLUSER -p$MYSQLPASS -h $MYSQLHOST -P $MYSQLPORT;
 echo "CREATE TABLE IF NOT EXISTS $MYSQLDB.$MYSQLTABLE ( timestamp BIGINT, id VARCHAR(64) NOT NULL PRIMARY KEY, location VARCHAR(64) CHARACTER SET utf8, place VARCHAR(64) CHARACTER SET utf8, type VARCHAR(64) CHARACTER SET utf8, ipv4 VARCHAR(16) CHARACTER SET utf8, ipv6 VARCHAR(512) CHARACTER SET utf8, platform VARCHAR(64) CHARACTER SET utf8, label VARCHAR(64) CHARACTER SET utf8 );" | mysql -u $MYSQLUSER -p$MYSQLPASS -h $MYSQLHOST -P $MYSQLPORT;
+echo "CREATE TABLE IF NOT EXISTS $MYSQLDB.$MYSQLDATATABLE ( timestamp BIGINT, id VARCHAR(64) CHARACTER SET utf8, value DECIMAL(5,2));" | mysql -u $MYSQLUSER -p$MYSQLPASS -h $MYSQLHOST -P $MYSQLPORT;
 
 while read LINE
 do
